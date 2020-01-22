@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Luca Comba">
+    <title>Check! our demo</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- OUR API -->
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <!-- 0x API -->
+    <script type="text/javascript" src="scripts/index.min.js"></script>
+</head>
+<body>
+    <div id="vue">
+    <div class="container">
+        <div class="row align-items-center topitem">
+            <div class="col-sm">
+                <img src="images/logo1.png" id="mainlogo" style="text-align: center;">
+            </div>
+            <div class="col-sm">
+                <h1 class="mainfont" style="text-align: center;">API DEMO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div style="margin-top: 5vw;">
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div style="border-style: solid; color: black; width: 100%; height: 0.5px;"></div> -->
+            <hr style="border: 0.5px solid #232528; width: 100vw;">
+        </div>
+        <div class="row">
+            <div style="margin-top: 5vw;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <img src="images/vegeta.png" style="border: 0.5px solid black; width: 20vw; height: auto;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <!-- Trigger/Open The Modal -->
+                <div>{{prices.vegeta}}$</div><button id="myBtn">Buy</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        
+                        <span class="close">&times;</span>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="mainfont">billing address</div>
+                                <label>Street name</label><input type="text" v-model="req.BillingAddress.Address">
+                                <label>City</label><input type="text" v-model="req.BillingAddress.City">
+                                <label>State</label><input type="text" v-model="req.BillingAddress.State">
+                                <label>Zip</label><input type="text" v-model="req.BillingAddress.Zip">
+                                <label>Country</label><input type="text" v-model="req.BillingAddress.Country">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="mainfont">billing name</div>
+                                <label>User ID</label><input type="text" v-model="req.UserID">
+                                <label>Full Name</label><input type="text" v-model="req.BillingName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="mainfont">Payment Info</div>
+                                <label>CreditCard</label><input type="text" v-model="req.CreditCardInfo.CCNumber">
+                                <label>CVC</label><input type="text" v-model="req.CreditCardInfo.CardVerficationCode">
+                                <label>Expiration Date</label><input type="month" v-model="req.CreditCardInfo.ExpirationDate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <button type="button" @click="submit()">SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
