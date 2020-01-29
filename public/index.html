@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Specter API Demo</title>
+  <meta property="og:title" content="title" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    html {
+      height: 100%;
+    }
+    
+    body {
+
+    }
+
+    .center { 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1, h2 {
+      line-height: 1.2;
+    }
+
+    footer {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      color: #888;
+      font-size: 9px;
+    }
+
+    a {
+      color: #07A;
+    }
+    a:visited {
+      color: #941352;
+    }
+    footer > a {
+      color: #888 !important;
+    }
+
+    .StripeElement {
+      box-sizing: border-box;
+      height: 40px;
+      padding: 10px 12px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background-color: white;
+      box-shadow: 0 1px 3px 0 #e6ebf1;
+      -webkit-transition: box-shadow 150ms ease;
+      transition: box-shadow 150ms ease;
+    }
+
+    .StripeElement--focus {
+      box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+
+    .StripeElement--invalid {
+      border-color: #fa755a;
+    }
+
+    .StripeElement--webkit-autofill {
+      background-color: #fefde5 !important;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="row">
+        <h1>SpecterAPI Demo</h1>
+    </div>
+
+    <div id="axie" class="center" >
+    </div> 
+
+    <div>
+        <div id="crypto" style="display: inline-block; padding-right:100px" >
+            <button type="button" >Buy With Crypto</button>
+        </div>
+        <div id="stripe"  style="display: inline-block;" >
+            <form action="/charge" method="post" id="payment-form">
+              <div class>
+                <label for="card-element">
+                  Credit or debit card
+                </label>
+                <div id="card-element" style="width=25vw">
+                  <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
+              </div>
+                <button type="button" id="stripButton" >Buy With USD</button>
+            </form>
+        </div>
+  </main>
+  <footer>
+    Writen By Tyler Beverley.
+    <a href="tyler.devs.eth.link">Blog</a>
+    <a href="https://github.com/SupahAmbition>Github">Github</a>
+    <a href="https://www.linkedin.com/in/tyler-beverley/">Linkedln</a>
+  </footer>
+
+  <script> 
+    var imgsrc 
+    var userID
+    var axieID
+    var price
+    $.getJSON("http://localhost:8080/axie", function( res ) { 
+        imgsrc = res.Image
+        axieID = res.ID
+        prive = res.BuyNowPrice
+        $("#axie").prepend('<img id="axieImg" src="'+imgsrc+'" width="400px" />')
+    })
+
+  </script>
+</body>
+</html>
+
