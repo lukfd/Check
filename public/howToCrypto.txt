@@ -1,0 +1,13 @@
+<li> Step 1. Install A Crypto Wallet. Metamask is the most common tool for this. 
+You can find this on your browser's respective store for extensions (except for <a href="https://www.ccn.com/google-removes-metamask-from-chrome-extension-store/">google chrome</a> now?)
+<li> Step 2. Sign Up For <a href="https://www.coinbase.com/signup>Coinbase</a>. 
+<li> Step 3. Give Coinbase all your information. Anti-money laundering (AML) laws require currency exchanges to know their customer (KYC).. This includes your social security, and government issued ID. 
+<li> Step 4. <a href="https://help.coinbase.com/en/coinbase/getting-started/adding-a-payment-method/payment-methods-for-us-customers.html">Connect</a>
+your bank to coinbase. Some <a href="https://www.coindesk.com/coinbase-confirms-4-banks-blocking-bitcoin-purchases-on-credit-cards">banks</a> wont allow you to connect to wells fargo). 
+<li> Step 5. Wait 4-5 business days. 
+<li> Step 6. Convert your USD to Ethereum. And pay a $2.99 fee.  
+<li> Step 7. Move your Ethereum to your Metamasak wallet. 
+<li> Step 8. Wait for your Ethereum to confirm. 
+<li> Step 9. Go to https://marketplace.axieinfinity.com
+<li> Step 10. Buy the Axie you want, click on "Buy Now". Confirm the transaction 
+<li> Step 11. Wait for transaction to confirm... Then you're Done! 
