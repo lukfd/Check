@@ -15,6 +15,7 @@ window.onload = function(){
         price = res.Auction.PriceInUSD
         setAxieImage( axieID, imgsrc)
         setAxiePrice( price )
+        //setAxieName( name ) 
     })
 
     stripeinit()
@@ -45,7 +46,6 @@ function stripeTokenHandler( token ) {
             dataType: "json",
         })
     })
-
 }
 
 
@@ -58,7 +58,12 @@ function setAxieImage( axieID, imgsrc){
 }
 
 function setAxiePrice( price ){ 
-    $("#price").prepend('<h4> Price: '+price+'</h4>')
+    $("#price").prepend('<h4>Price: $'+price.toFixed(2)+'</h4>')
+}
+
+function setAxieName( name ){ 
+    $("#name").prepend('<h4>Name: '+name+'+</h4>')
+
 }
 
 
