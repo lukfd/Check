@@ -11,15 +11,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <script type="text/javascript" src="scripts/script.js"></script>
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <style>
     html {
       height: 100%;
     }
-    
-    body {
+    .Cryptobtn {
+        position: relative;
+        bottom: 0px;
+        right: 0px; 
+    }
 
+    .StripeElement {
+      box-sizing: border-box;
+      height: 40px;
+      width: 400px;
+      padding: 10px 12px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background-color: white;
+      box-shadow: 0 1px 3px 0 #e6ebf1;
+      -webkit-transition: box-shadow 150ms ease;
+      transition: box-shadow 150ms ease;
+    }
+
+    .StripeElement--focus {
+      box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+
+    .StripeElement--invalid {
+      border-color: #fa755a;
+    }
+
+    .StripeElement--webkit-autofill {
+      background-color: #fefde5 !important;
     }
 
     .center { 
@@ -48,61 +73,45 @@
     footer > a {
       color: #888 !important;
     }
-
-    .StripeElement {
-      box-sizing: border-box;
-      height: 40px;
-      padding: 10px 12px;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      background-color: white;
-      box-shadow: 0 1px 3px 0 #e6ebf1;
-      -webkit-transition: box-shadow 150ms ease;
-      transition: box-shadow 150ms ease;
-    }
-
-    .StripeElement--focus {
-      box-shadow: 0 1px 3px 0 #cfd7df;
-    }
-
-    .StripeElement--invalid {
-      border-color: #fa755a;
-    }
-
-    .StripeElement--webkit-autofill {
-      background-color: #fefde5 !important;
-    }
   </style>
 </head>
 <body>
   <main>
-    <div class="row">
+    <div>
         <h1>SpecterAPI Demo</h1>
     </div>
+    <div> 
+        <p> SpecterAPI is a service to allow easy USD purchaing of Crypto Enabled Products or Services. <br>
+        This demo will allow you to buy <a href="">axies</a>. Which are adorable Non-Fungible Tokens that are made possible by Ethereum.<br> 
+        <p> 
+    <div> 
 
+    <div id="price">
+    </div> 
     <div id="axie" class="center" >
     </div> 
-
     <div>
-        <div id="crypto" style="display: inline-block; padding-right:100px" >
-            <button type="button" >Buy With Crypto</button>
-        </div>
-        <div id="stripe"  style="display: inline-block;" >
+        <div id="stripe">
             <form action="/charge" method="post" id="payment-form">
               <div class>
                 <label for="card-element">
                   Credit or debit card
                 </label>
-                <div id="card-element" style="width=25vw">
+                <div id="card-element">
                   <!-- A Stripe Element will be inserted here. -->
                 </div>
 
                 <!-- Used to display form errors. -->
               <div id="card-errors" role="alert"></div>
               </div>
-                <button type="button" id="stripButton" >Buy With USD</button>
+
+               <button type="submit" id="stripeButton" form="payment-form">Buy With USD</button>
+              <div id="crypto" style="display: inline-block; padding-left:300px;" >
+                  <button type="button">Buy With Crypto</button>
+              </div>
             </form>
         </div>
+  </div>
   </main>
   <footer>
     Writen By Tyler Beverley.
@@ -110,20 +119,6 @@
     <a href="https://github.com/SupahAmbition>Github">Github</a>
     <a href="https://www.linkedin.com/in/tyler-beverley/">Linkedln</a>
   </footer>
-
-  <script> 
-    var imgsrc 
-    var userID
-    var axieID
-    var price
-    $.getJSON("http://localhost:8080/axie", function( res ) { 
-        imgsrc = res.Image
-        axieID = res.ID
-        prive = res.BuyNowPrice
-        $("#axie").prepend('<img id="axieImg" src="'+imgsrc+'" width="400px" />')
-    })
-
-  </script>
 </body>
 </html>
 
