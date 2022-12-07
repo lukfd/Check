@@ -9,7 +9,7 @@
     "contributors": [],
     "main": "eserver.js",
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.18.2",
         "node-gyp": "^6.1.0",
         "portal-vue": "^2.1.7",
         "vue": "^2.6.11",
